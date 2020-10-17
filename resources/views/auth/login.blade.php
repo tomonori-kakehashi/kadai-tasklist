@@ -19,11 +19,11 @@
                     {!! Form::password('password', ['class' => 'form-control']) !!}
                 </div>
 
-                {!! Form::submit('Log in', ['class' => 'btn btn-primary btn-block']) !!}
+                {!! Form::submit('ログインする', ['class' => 'btn btn-success btn-block']) !!}
             {!! Form::close() !!}
 
             {{-- ユーザ登録ページへのリンク --}}
-            <p class="mt-2">New user? {!! link_to_route('signup.get', 'Sign up now!') !!}</p>
+            <p class="mt-2">登録はお済みですか？ {!! link_to_route('signup.get', 'ユーザ登録へ') !!}</p>
         </div>
     </div>
 @endsection

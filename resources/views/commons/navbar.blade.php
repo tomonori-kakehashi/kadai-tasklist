@@ -1,5 +1,5 @@
 <header class="mb-4">
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-sm navbar-white bg-light">
         {{-- トップページへのリンク --}}
         <a class="navbar-brand" href="/">タスクリスト</a>
 
@@ -11,18 +11,9 @@
             <ul class="navbar-nav mr-auto"></ul>
             <ul class="navbar-nav">
                 @if (Auth::check())
-                    {{-- ユーザ一覧ページへのリンク --}}
-                    <li class="nav-item">{!! link_to_route('users.index', 'ユーザ一覧', [], ['class' => 'nav-link']) !!}</li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->name }}</a>
-                        <ul class="dropdown-menu dropdown-menu-right">
-                            {{-- ユーザ詳細ページへのリンク --}}
-                                <li class="dropdown-item">{!! link_to_route('users.show', 'プロフィールページ', ['user' => Auth::id()]) !!}</li>
-                                <li class="dropdown-divider"></li>
-                            {{-- ログアウトへのリンク --}}
-                            <li class="dropdown-item">{!! link_to_route('logout.get', 'ログアウト') !!}</li>
-                        </ul>
-                    </li>
+                    
+                    <h3>{{ Auth::user()->name. 'さんがログイン中です' }}</h3>
+                    
                 @else
                     {{-- ユーザ登録ページへのリンク --}}
                     <li class="nav-item">{!! link_to_route('signup.get', 'ユーザ登録', [], ['class' => 'nav-link']) !!}</li>
